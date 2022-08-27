@@ -3,31 +3,36 @@ import { galleryItems } from "./gallery-items.js";
 
 console.log(galleryItems);
 
-const galleryEl = document.querySelector("gallery");
-
-const list = document.createElement("ul");
-list.classList.add("gallery__list");
-console.log(list);
-
-galleryEl.append(list);
+const galleryEl = document.querySelector("[class=gallery]");
 
 function createListGalleryItem(items) {
-  return items
-    .map(
-      (item) => `
-  <li class='gallery__item' > 
-  ${item.preview} </li>`
+  return items.map( item => `
+  <img class='gallery__item'
+  src = "${item.preview}"
+  alt = "${item.description}"
+  width = 340px
+   />`
     )
     .join("");
 }
 
 const listGalleryItem = createListGalleryItem(galleryItems);
+galleryEl.innerHTML = listGalleryItem;
 
-// gallery.addEventListener('click', onClickGallery);
+// v2
 
-// function onClickGallery(event) {
-//     if (event.target.nodeName !== "IMG") {
-//         return;
-//     }
-//     console.log(event.target.nodeName);
+// function createListGalleryItem(items) {
+//   const elements = [];
+
+//   items.map((item) => {
+//     const imgEl = document.createElement("img");
+//     imgEl.classList.add("gallery__item");
+
+//     imgEl.setAttribute("src", item.preview);
+//     imgEl.setAttribute("alt", item.description);
+
+//     elements.push(imgEl);
+//   });
+
+//   galleryEl.append(...elements);
 // }
