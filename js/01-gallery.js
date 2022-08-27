@@ -36,3 +36,13 @@ galleryEl.innerHTML = listGalleryItem;
 
 //   galleryEl.append(...elements);
 // }
+
+
+galleryEl.addEventListener('click', onClickGalleryItem);
+
+function onClickGalleryItem(event) {
+    if (event.target.nodeName !== "IMG") {
+        return;
+    }
+    console.log(event.target.nodeName);
+}
