@@ -43,8 +43,18 @@ galleryEl.innerHTML = listGalleryItem;
 galleryEl.addEventListener("click", onClickGalleryItem);
 
 function onClickGalleryItem(event) {
-  if (event.target.nodeName !== "IMG") {
+  if (!event.target.classList.contains("gallery__image")) {
     return;
   }
   event.preventDefault();
+
+  const currentActiveCard = document.querySelector('gallery__link.is-active')
+  if (currentActiveCard) {
+    currentActiveCard.classList.remove('is-active')
+  }
+
+  const swatchEl = event.target;
+  const parentCard = swatchEl.closest("gallery__link");
+  parentCard.classList.add("is-active");
+
 }
