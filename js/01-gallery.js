@@ -47,14 +47,40 @@ function onClickGalleryItem(event) {
     return;
   }
   event.preventDefault();
+//   console.log(event.target);
 
-  const currentActiveCard = document.querySelector('gallery__link.is-active')
-  if (currentActiveCard) {
-    currentActiveCard.classList.remove('is-active')
-  }
-
-  const swatchEl = event.target;
-  const parentCard = swatchEl.closest("gallery__link");
-  parentCard.classList.add("is-active");
-
+  showModalImg(event.target);
 }
+//   import * as basicLightbox from "basiclightbox";
+
+function showModalImg(eventTarget) {
+  const instance = basicLightbox.create(`
+    <img src="${eventTarget.dataset.source}" >
+`);
+
+  instance.show();
+
+  // Добавление и удаление активных классов
+
+  //   const currentActiveCard = document.querySelector('gallery__link.is-active')
+  //   if (currentActiveCard) {
+  //     currentActiveCard.classList.remove('is-active')
+  //   }
+
+  //   const swatchEl = event.target;
+  //   const parentCard = swatchEl.closest("gallery__link");
+  //   parentCard.classList.add("is-active");
+}
+
+// basicLightbox пример
+
+// const instance = basicLightbox.create(`
+//     <div class="modal">
+//         <p>
+//             Your first lightbox with just a few lines of code.
+//             Yes, it's really that simple.
+//         </p>
+//     </div>
+// `)
+
+// instance.show()
