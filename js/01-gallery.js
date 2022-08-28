@@ -51,7 +51,7 @@ function onClickGalleryItem(event) {
 
   showModalImg(event.target);
 }
-//   import * as basicLightbox from "basiclightbox";
+//   Modal from "basiclightbox";
 
 function showModalImg(eventTarget) {
   const instance = basicLightbox.create(`
