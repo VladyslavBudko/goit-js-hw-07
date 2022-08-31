@@ -57,6 +57,7 @@ function onClickGalleryItem(event) {
 // var lightbox = $('.gallery a').simpleLightbox({ /* options */ });
 
 function showModalImgSimpleLightbox() {
+    
     let lightbox = new SimpleLightbox('.gallery a', {
         nav: true,
         caption: true,
