@@ -47,19 +47,26 @@ function onClickGalleryItem(event) {
     return;
   }
   event.preventDefault();
-//   console.log(event.target);
+  //   console.log(event.target);
 
-  showModalImg(event.target);
+  showModalImg(event);
 }
 //   Modal from "basiclightbox";
 
-function showModalImg(eventTarget) {
+function showModalImg(event) {
   const instance = basicLightbox.create(`
-    <img src="${eventTarget.dataset.source}" >
+    <img src="${event.target.dataset.source}" >
 `);
-
   instance.show();
 
+  window.addEventListener("keydown", onESC);
+  
+  function onESC(event) {
+    if (event.code === "Escape") {
+      window.removeEventListener("keydown", showModalImg);
+      instance.close();
+      // instance.close() не работает?
+    }
   // Добавление и удаление активных классов
 
   //   const currentActiveCard = document.querySelector('gallery__link.is-active')
@@ -72,15 +79,4 @@ function showModalImg(eventTarget) {
   //   parentCard.classList.add("is-active");
 }
 
-// basicLightbox пример
-
-// const instance = basicLightbox.create(`
-//     <div class="modal">
-//         <p>
-//             Your first lightbox with just a few lines of code.
-//             Yes, it's really that simple.
-//         </p>
-//     </div>
-// `)
-
-// instance.show()
+}
