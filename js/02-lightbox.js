@@ -57,24 +57,13 @@ function onClickGalleryItem(event) {
 // var lightbox = $('.gallery a').simpleLightbox({ /* options */ });
 
 function showModalImgSimpleLightbox() {
-    var lightbox = new SimpleLightbox('.gallery a', {
+    let lightbox = new SimpleLightbox('.gallery a', {
         nav: true,
         caption: true,
-        captionData: true,
-        captionPosition: 'bottom'
+        captionData: 'alt',
+        captionPosition: 'bottom',
+        captionDelay: 250,
     });
 
-// let gallery = new SimpleLightbox('.gallery a', );
-// gallery.on('show.simplelightbox', function () {
-// 	// do something…
-// });
 };
-
-// function showModalImgSimpleLightbox(eventTarget) {
-//   const instance = basicLightbox.create(`
-//     <img src="${eventTarget.dataset.source}" >
-// `);
-
-//   instance.show();
-// }
 
