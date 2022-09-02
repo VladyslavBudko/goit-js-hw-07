@@ -60,23 +60,22 @@ function showModalImg(event) {
   instance.show();
 
   window.addEventListener("keydown", onESC);
-  
+
   function onESC(event) {
     if (event.code === "Escape") {
-      window.removeEventListener("keydown", showModalImg);
+      window.removeEventListener("keydown", onESC);
       instance.close();
-      // instance.close() не работает?
     }
-  // Добавление и удаление активных классов
 
-  //   const currentActiveCard = document.querySelector('gallery__link.is-active')
-  //   if (currentActiveCard) {
-  //     currentActiveCard.classList.remove('is-active')
-  //   }
+    // Добавление и удаление активных классов
 
-  //   const swatchEl = event.target;
-  //   const parentCard = swatchEl.closest("gallery__link");
-  //   parentCard.classList.add("is-active");
-}
+    //   const currentActiveCard = document.querySelector('gallery__link.is-active')
+    //   if (currentActiveCard) {
+    //     currentActiveCard.classList.remove('is-active')
+    //   }
 
+    //   const swatchEl = event.target;
+    //   const parentCard = swatchEl.closest("gallery__link");
+    //   parentCard.classList.add("is-active");
+  }
 }

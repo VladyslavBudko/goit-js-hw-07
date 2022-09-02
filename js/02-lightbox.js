@@ -55,7 +55,7 @@ function showModalImgSimpleLightbox() {
     let lightbox = new SimpleLightbox('.gallery a', {
         nav: true,
         caption: true,
-        captionData: "alt",
+        captionsData: "alt",
         captionPosition: "bottom",
         captionDelay: 250,
     });
