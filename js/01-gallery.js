@@ -63,8 +63,8 @@ function showModalImg(event) {
 
   function onESC(event) {
     if (event.code === "Escape") {
-      window.removeEventListener("keydown", onESC);
       instance.close();
+      window.removeEventListener("keydown", onESC);
     }
 
     // Добавление и удаление активных классов
