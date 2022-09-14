@@ -5,25 +5,6 @@ console.log(galleryItems);
 
 const galleryEl = document.querySelector("[class=gallery]");
 
-{
-  /* V1
-<div class="gallery__item">
-  <a class="gallery__link" href="large-image.jpg">
-    <img
-      class="gallery__image"
-      src="small-image.jpg"
-      data-source="large-image.jpg"
-      alt="Image description"
-    />
-  </a>
-</div>
-
-V2
-<a class="gallery__item" href="large-image.jpg">
-  <img class="gallery__image" src="small-image.jpg" alt="Image description" />
-</a>
- */
-}
 
 function createListGalleryItem(items) {
   return items
